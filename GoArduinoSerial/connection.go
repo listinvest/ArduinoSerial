@@ -18,6 +18,7 @@ func (connection *Connection) NewConnection (portName string, mode *serial.Mode)
 		connection.port = port
 
 		connection.Write("Connected")
+		log.Println ("Connected")
 	}else{
 		log.Fatal(err)
 	}

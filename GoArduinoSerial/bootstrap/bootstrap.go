@@ -24,7 +24,7 @@ func main (){
 
 	fmt.Scanln(&port)
 
-	fmt.Println("Порт:", port)
+	log.Println("Порт:", port)
 
 	mode := &serial.Mode{
 		BaudRate: 9600,
