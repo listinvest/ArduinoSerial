@@ -17,7 +17,7 @@ func main (){
 	log.Println("Какой порт Вы хотите использовать?")
 
 	for _, port := range ports{
-		log.Println(port)
+		fmt.Println("*", port)
 	}
 
 	var port string
@@ -30,8 +30,7 @@ func main (){
 		BaudRate: 9600,
 	}
 
-	connection := &GoArduinoSerial.Connection{}
-	connection.NewConnection(port, mode)
+	connection := GoArduinoSerial.NewConnection(port, mode)
 
 	defer connection.Close()
 

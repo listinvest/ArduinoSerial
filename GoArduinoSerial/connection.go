@@ -10,18 +10,21 @@ type Connection struct{
 	port  serial.Port
 }
 
-func (connection *Connection) NewConnection (portName string, mode *serial.Mode){
+func NewConnection (portName string, mode *serial.Mode) (*Connection){
+	connection := &Connection{}
 	port, err := serial.Open(portName, mode)
 
 	if err == nil{
 		connection.mode = mode
 		connection.port = port
 
-		connection.Write("Connected")
-		log.Println ("Connected")
+		connection.Write("Подключено")
+		log.Println ("Подключено")
 	}else{
 		log.Fatal(err)
 	}
+
+	return connection
 }
 
 func (connection *Connection) Write (text string) bool{
