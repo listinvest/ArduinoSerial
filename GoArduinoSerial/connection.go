@@ -10,7 +10,7 @@ type Connection struct{
 	port  serial.Port
 }
 
-func NewConnection (portName string, mode *serial.Mode) (*Connection){
+func NewConnection (portName string, mode *serial.Mode) *Connection{
 	connection := &Connection{}
 	port, err := serial.Open(portName, mode)
 
